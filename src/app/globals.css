@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
+/* ClinicFlow Medical Theme */
 :root {
+  /* Primary Colors */
+  --medical-blue: #0a74da;
+  --navy: #0a1a2f;
+  --light-gray: #f3f6f9;
+  --dark-text: #1a1a1a;
+  --white: #ffffff;
+  
+  /* Background & Foreground */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  
+  /* Accent Colors */
+  --blue-light: #e8f4fd;
+  --blue-dark: #065bb5;
+  --gray-border: #e1e8ed;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
 }
 
 @theme inline {
+  /* Tailwind Custom Colors */
+  --color-medical-blue: var(--medical-blue);
+  --color-navy: var(--navy);
+  --color-light-gray: var(--light-gray);
+  --color-dark-text: var(--dark-text);
+  --color-blue-light: var(--blue-light);
+  --color-blue-dark: var(--blue-dark);
+  --color-gray-border: var(--gray-border);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  
+  /* Background & Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Smooth Transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Focus Styles */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--medical-blue);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(10, 26, 47, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(10, 116, 218, 0.15);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--medical-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 116, 218, 0.3);
+}
+
+.btn-secondary {
+  background: var(--light-gray);
+  color: var(--navy);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-border);
 }

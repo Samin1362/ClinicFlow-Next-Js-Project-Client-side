@@ -1,11 +1,8 @@
-import React from 'react';
-
-const page = () => {
+export default function AboutPage() {
   return (
-    <div>
-      <h1>This is about page. </h1>
-    </div>
+    <main className="min-h-screen">
+      <h1>About Page</h1>
+      <p>Information about ClinicFlow</p>
+    </main>
   );
-};
-
-export default page;
+}
