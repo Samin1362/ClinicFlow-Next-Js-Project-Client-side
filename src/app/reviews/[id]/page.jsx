@@ -1,7 +1,8 @@
-import React from 'react'
-
-export default function page() {
+export default function ReviewDetailsPage({ params }) {
   return (
-    <div>this is reviews page</div>
-  )
+    <main className="min-h-screen">
+      <h1>Review Details Page</h1>
+      <p>Single review details - ID: {params.id}</p>
+    </main>
+  );
 }
